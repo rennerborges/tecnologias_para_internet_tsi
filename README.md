@@ -2,7 +2,7 @@
 
 # Tecnologias para Internet (TI) 
 
-Conteúdo desenvolvido durante o 6° período na disciplina Tecnologias para Internet (TI) no curso de Sistemas para internet realizado no Instituto Federal Goiano - Campus Morrinhos. 
+Conteúdo desenvolvido durante o 6° período na disciplina Tecnologias para Internet (TI) no curso de Tecnologia em Sistemas para internet pelo Instituto Federal Goiano - Campus Morrinhos. 
 
 
 ## Autores
