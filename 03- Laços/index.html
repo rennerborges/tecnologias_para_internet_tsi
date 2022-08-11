@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World | Vue.js</title>
+    <title>Laços | Vue.js</title>
     <link
       rel="icon"
       type="image/png"
@@ -13,14 +13,22 @@
     />
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">{{ todo.text }}</li>
+      </ol>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script>
-      var app = new Vue({
-        el: '#app',
+      var app4 = new Vue({
+        el: '#app-4',
         data: {
-          message: 'Hello World!',
+          todos: [
+            { text: 'Aprender JavaScript' },
+            { text: 'Aprender Vue' },
+            { text: 'Criar algo incrível' },
+          ],
         },
       });
     </script>
