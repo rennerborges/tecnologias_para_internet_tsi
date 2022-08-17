@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 1 | Vue.js</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://br.vuejs.org/images/icons/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./stylesheets.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div v-bind:title="message" id="backdrop"></div>
+      <section id="content">
+        <h1>Digite um segredo aqui</h1>
+        <input autofocus v-model="message" />
+        <div v-if="message" id="secret">Descubra onde está o seu segredo!</div>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: '',
+        },
+      });
+    </script>
+  </body>
+</html>
