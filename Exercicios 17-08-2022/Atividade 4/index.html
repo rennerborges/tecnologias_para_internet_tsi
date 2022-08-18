@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 4 | Vue.js</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://br.vuejs.org/images/icons/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./stylesheets.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section id="content">
+        <p>Bandas favoritas</p>
+        <ol>
+          <li v-for="banda in bandas">{{ banda.text }}</li>
+        </ol>
+
+        <p>Ábuns favoritos</p>
+        <ol>
+          <todo-item
+            v-for="item in albuns"
+            v-bind:todo="item"
+            v-bind:key="item.id"
+          ></todo-item>
+        </ol>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+      Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>',
+      });
+
+      var app = new Vue({
+        el: '#app',
+        data: {
+          bandas: [
+            { text: 'Engenheiros do Hawaii' },
+            { text: 'Supercombo' },
+            { text: 'Scalene' },
+          ],
+          albuns: [
+            { text: 'O papa é pop', id: 1 },
+            { text: 'Amianto', id: 2 },
+            { text: 'Fogo', id: 3 },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

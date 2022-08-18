@@ -21,16 +21,16 @@
   <body>
     <div id="app">
       <section id="content">
-        <p>Informe sua banda favorita:</p>
-        <div>
-          <input autofocus v-model="message" />
-          <button v-on:click="addBanda">Add</button>
-        </div>
-
         <p>Bandas favoritas</p>
         <ol>
           <li v-for="banda in bandas">{{ banda.text }}</li>
         </ol>
+
+        <p>Informe sua banda favorita:</p>
+        <form onsubmit="onSubmit(event)">
+          <input autofocus v-model="message" />
+          <button v-on:click="addBanda">Add</button>
+        </form>
       </section>
     </div>
 
@@ -52,14 +52,15 @@
         },
         methods: {
           addBanda: function () {
-            if (!this.message) {
+            const message = this.message.trim();
+            if (!message) {
               return;
             }
 
-            this.bandas.push({ text: this.message });
+            this.bandas.push({ text: message });
 
             Toastify({
-              text: `Banda ${this.message} adicionada`,
+              text: `Banda ${message} adicionada`,
               className: 'info',
               style: {
                 background: 'linear-gradient(to right, #00b09b, #96c93d)',
@@ -70,6 +71,10 @@
           },
         },
       });
+
+      function onSubmit(event) {
+        event.preventDefault();
+      }
     </script>
   </body>
 </html>
