@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 3 | Vue.js</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://br.vuejs.org/images/icons/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="./stylesheets.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section id="content">
+        <p>Informe sua banda favorita:</p>
+        <div>
+          <input autofocus v-model="message" />
+          <button v-on:click="addBanda">Add</button>
+        </div>
+
+        <p>Bandas favoritas</p>
+        <ol>
+          <li v-for="banda in bandas">{{ banda.text }}</li>
+        </ol>
+      </section>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: '',
+          bandas: [
+            { text: 'Engenheiros do Hawaii' },
+            { text: 'Supercombo' },
+            { text: 'Scalene' },
+          ],
+        },
+        methods: {
+          addBanda: function () {
+            if (!this.message) {
+              return;
+            }
+
+            this.bandas.push({ text: this.message });
+
+            Toastify({
+              text: `Banda ${this.message} adicionada`,
+              className: 'info',
+              style: {
+                background: 'linear-gradient(to right, #00b09b, #96c93d)',
+              },
+            }).showToast();
+
+            this.message = '';
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
