@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividade 9 | Vue.js</title>
+    <title>Atividade 11 | Vue.js</title>
     <link
       rel="icon"
       type="image/png"
@@ -23,23 +23,12 @@
   </head>
   <body>
     <div id="app">
-      <img v-if="banda === 'supercombo'" v-bind:src="supercomboImg" width="500" />
-      <img v-else v-bind:src="scaleneImagem" width="500"/>
-      <section>
-        <p>Banda</p>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" v-model="banda" value="supercombo" name="flexRadioDefault" id="flexRadioDefault1">
-          <label class="form-check-label" for="flexRadioDefault1">
-            Supercombo
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" v-model="banda" value="scalene" name="flexRadioDefault" id="flexRadioDefault2" checked>
-          <label class="form-check-label" for="flexRadioDefault2">
-            Scalene
-          </label>
+      <section id="content">
+        <h1>{{count}}</h1>
+        <button type="button" class="btn btn-primary" v-on:click="addCount">
+          Contar
+        </button>
       </section>
-      
     </div>
 
     <script
@@ -53,11 +42,24 @@
       var app = new Vue({
         el: '#app',
         data: {
-          banda: 'scalene',
-          supercomboImg: 'https://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2022/02/supercombo-banda-foto-sofa.jpg',
-          scaleneImagem: 'https://static.ricmais.com.br/uploads/2018/05/scalene-banda.jpg',
+          count: 0,
         },
-        
+
+        methods: {
+          addCount: function () {
+            ++this.count;
+          },
+        },
+
+        watch: {
+          count: function (newCount) {
+            console.log(`Count: ${newCount}`);
+
+            if (newCount >= 4) {
+              alert('Maior sim');
+            }
+          },
+        },
       });
     </script>
   </body>
