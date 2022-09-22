@@ -1,8 +1,6 @@
 <template>
   <header>
-    <h1>
-      <img src="../assets/logo.png" />
-    </h1>
+    <img src="../assets/logo.png" />
   </header>
 </template>
 
@@ -20,6 +18,12 @@ header {
   background: #0d3b66;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header img {
+  width: 120px;
 }
 @media only screen and (max-width: 768px) {
   header {
