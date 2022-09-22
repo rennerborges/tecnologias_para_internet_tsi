@@ -5,7 +5,7 @@
     </div>
     <div class="column is-three-quarter">
       <formulario />
-      <TitleComponent value="Sou um componente do Vue.js" />
+      <TitleComponent>Componente de título para teste</TitleComponent>
     </div>
   </main>
 </template>

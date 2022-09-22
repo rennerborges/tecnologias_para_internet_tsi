@@ -1,5 +1,7 @@
 <template>
-  <h1>{{ value }}</h1>
+  <h1>
+    <slot></slot>
+  </h1>
 </template>
 
 <script lang="ts">
@@ -7,9 +9,6 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'TitleComponent',
-  props: {
-    value: String,
-  },
 });
 </script>
 
