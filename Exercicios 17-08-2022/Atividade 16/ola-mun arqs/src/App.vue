@@ -1,8 +1,15 @@
 <template>
   <main>
     <h1>Informe um aluno</h1>
-    <Formulario @addList="addList" />
+    <Formulario @addList="addList" @clear="clear" @copy="copy" />
+    <h2>Alunos</h2>
     <Lista :values="items" />
+
+    <h2>Copia Alunos</h2>
+    <button type="button" class="btn btn-danger" @click="clearCopy">
+      Limpar lista
+    </button>
+    <Lista :values="copyItems" />
   </main>
 </template>
 
@@ -17,12 +24,22 @@ export default defineComponent({
   data: function () {
     return {
       items: ['Renner', 'Rafael'],
+      copyItems: [],
       value: '',
     };
   },
   methods: {
     addList: function (value) {
       this.items.push(value);
+    },
+    clear: function () {
+      this.items = [];
+    },
+    clearCopy: function () {
+      this.copyItems = [];
+    },
+    copy: function () {
+      this.copyItems = [...this.items];
     },
   },
   components: {
@@ -36,6 +53,12 @@ export default defineComponent({
 h1 {
   font-size: 25px;
 }
+
+h2 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
 main {
   margin: 20px;
 }

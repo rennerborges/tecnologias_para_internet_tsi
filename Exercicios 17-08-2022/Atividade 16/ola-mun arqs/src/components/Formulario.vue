@@ -11,10 +11,14 @@
         aria-describedby="basic-addon1"
       />
     </div>
-    <button type="button" class="btn btn-primary" @click="submit">
+    <button type="button" class="btn btn-primary submit" @click="submit">
       Salvar
     </button>
   </form>
+  <button type="button" class="btn btn-danger" @click="clear">
+    Limpar lista
+  </button>
+  <button type="button" class="btn btn-info" @click="copy">Copiar</button>
 </template>
 
 <script lang="ts">
@@ -34,6 +38,12 @@ export default defineComponent({
         this.text = '';
       }
     },
+    clear: function () {
+      this.$emit('clear');
+    },
+    copy: function () {
+      this.$emit('copy');
+    },
   },
 });
 </script>
@@ -43,7 +53,7 @@ form {
   display: flex;
 }
 
-.btn {
+.submit {
   margin-left: 10px;
   height: fit-content;
 }
