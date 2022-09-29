@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form v-on:submit="submit">
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1">@</span>
       <input
@@ -29,18 +29,22 @@ export default defineComponent({
   },
   methods: {
     submit: function () {
-      this.$emit('addList', this.text);
+      if (this.text) {
+        this.$emit('addList', this.text);
+        this.text = '';
+      }
     },
   },
 });
 </script>
 
 <style>
-.box {
-  padding: 20px;
+form {
+  display: flex;
 }
 
-div[role='form'] .collumn {
-  margin-top: 10px;
+.btn {
+  margin-left: 10px;
+  height: fit-content;
 }
 </style>

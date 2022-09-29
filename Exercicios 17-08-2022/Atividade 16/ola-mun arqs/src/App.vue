@@ -22,7 +22,6 @@ export default defineComponent({
   },
   methods: {
     addList: function (value) {
-      alert(value);
       this.items.push(value);
     },
   },
@@ -33,4 +32,11 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+h1 {
+  font-size: 25px;
+}
+main {
+  margin: 20px;
+}
+</style>
