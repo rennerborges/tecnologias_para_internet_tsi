@@ -1,29 +1,34 @@
 <template>
-  <main class="columns is-gapless is-multiline">
-    <div class="column is-one-quarter">
-      <BarraLateral />
-    </div>
-    <div class="column is-three-quarter">
-      <formulario />
-      <TitleComponent title="Oii sou uma prop"
-        >Componente de título para teste</TitleComponent
-      >
-    </div>
+  <main>
+    <h1>Informe um aluno</h1>
+    <Formulario @addList="addList" />
+    <Lista :values="items" />
   </main>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-import BarraLateral from './components/BarraLateral.vue';
-import Formulario from './components/Formulario.vue';
-import TitleComponent from './components/TitleComponent.vue';
+
+import Lista from './components/Lista';
+import Formulario from './components/Formulario';
 
 export default defineComponent({
   name: 'App',
+  data: function () {
+    return {
+      items: ['Renner', 'Rafael'],
+      value: '',
+    };
+  },
+  methods: {
+    addList: function (value) {
+      alert(value);
+      this.items.push(value);
+    },
+  },
   components: {
-    BarraLateral,
+    Lista,
     Formulario,
-    TitleComponent,
   },
 });
 </script>

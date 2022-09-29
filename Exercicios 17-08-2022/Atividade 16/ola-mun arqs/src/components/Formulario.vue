@@ -1,48 +1,37 @@
 <template>
-  <div class="box">
-    <div class="columns">
-      <div
-        class="column is-12"
-        role="form"
-        aria-label="Formulário para criação de uma nova tarefa"
-      >
-        <input
-          type="text"
-          class="input"
-          placeholder="Qual tarefa você deseja iniciar?"
-        />
-        <div class="collumn">
-          <div
-            class="is-flex is-align-items-center is-justify-content-space-between"
-          >
-            <section>
-              <strong>00:00:00</strong>
-            </section>
-
-            <button class="button">
-              <span class="icon">
-                <i class="fas fa-play"></i>
-              </span>
-              <span>play</span>
-            </button>
-            <button class="button">
-              <span class="icon">
-                <i class="fas fa-stop"></i>
-              </span>
-              <span>stop</span>
-            </button>
-          </div>
-        </div>
-      </div>
+  <form>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input
+        v-model="text"
+        type="text"
+        class="form-control"
+        placeholder="Username"
+        aria-label="Username"
+        aria-describedby="basic-addon1"
+      />
     </div>
-  </div>
+    <button type="button" class="btn btn-primary" @click="submit">
+      Salvar
+    </button>
+  </form>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'FormulárioCad',
+  name: 'FormularioC',
+  data: function () {
+    return {
+      text: '',
+    };
+  },
+  methods: {
+    submit: function () {
+      this.$emit('addList', this.text);
+    },
+  },
 });
 </script>
 
