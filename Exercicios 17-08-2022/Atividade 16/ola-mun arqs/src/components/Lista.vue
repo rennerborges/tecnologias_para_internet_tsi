@@ -10,9 +10,13 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'BarraLateral',
+  name: 'ListaExample',
   props: ['values'],
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+li {
+  user-select: none;
+}
+</style>
