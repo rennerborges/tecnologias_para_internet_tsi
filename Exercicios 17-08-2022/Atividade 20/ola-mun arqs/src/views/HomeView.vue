@@ -105,7 +105,7 @@
           </a>
         </div>
         <h2>
-          &copy; 2020 &middot; Renner Borges &middot; Todos os direitos
+          &copy; 2022 &middot; Renner Borges &middot; Todos os direitos
           reservados
         </h2>
       </div>

@@ -1,6 +1,10 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import Formulario from '../components/Formulario.vue';
+import CancoesView from '../views/CancoesView.vue';
+import CosmoView from '../views/CosmoView.vue';
+import PraiaView from '../views/PraiaView.vue';
+import SabadoView from '../views/SabadoView.vue';
+import CiceroAlbatrozView from '../views/CiceroAlbatrozView.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -9,9 +13,29 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView,
   },
   {
-    path: '/renner',
-    name: 'renner',
-    component: Formulario,
+    path: '/cancoes',
+    name: 'Canções de apartamento',
+    component: CancoesView,
+  },
+  {
+    path: '/cosmo',
+    name: 'Cosmo',
+    component: CosmoView,
+  },
+  {
+    path: '/praia',
+    name: 'Praia',
+    component: PraiaView,
+  },
+  {
+    path: '/sabado',
+    name: 'Sábado',
+    component: SabadoView,
+  },
+  {
+    path: '/ciceroAlbatroz',
+    name: 'Cíero e Albatroz',
+    component: CiceroAlbatrozView,
   },
   {
     path: '/about',
