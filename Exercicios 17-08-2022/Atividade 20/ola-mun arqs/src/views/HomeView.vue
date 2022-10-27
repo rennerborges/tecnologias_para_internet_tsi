@@ -14,7 +14,7 @@
           </div>
         </div>
         <div class="arrow">
-          <a href="#discografia">
+          <a>
             <img alt="Seta" src="../assets/images/icons/down-arrow.svg" />
           </a>
         </div>
