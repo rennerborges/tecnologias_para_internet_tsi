@@ -2,73 +2,34 @@
 
 /* =========== CONFIGURAÇÕES GERAIS ========== */
 
-*{
-    font-family: 'Roboto', sans-serif;
+* {
+  font-family: 'Roboto', sans-serif;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
 /* =========== CONTAINER ========== */
 
 .container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0px 35px;
-    margin: 0 auto;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding: 0px 35px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
-    .container {
-        width:100%;
-        padding: 0 20px;
-    }
-}
-
-body{
-    background-color: rgba(0, 0, 0);
-}
-
-/* =========== FOOTER ========== */
-
-footer > .container {
+  .container {
     width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    padding: 0 20px;
+  }
 }
 
-footer > .container  h2 {
-    color: white;
-    font-size: 13pt;
-    font-weight: 400;
-}
-
-
-footer .streamings {
-    position: absolute;
-    left: 35px;
-    display: flex;
-}
-
-footer .streamings figure {
-    margin: 0px;
-}
-
-footer .streamings a {
-    margin-left: 20px;
-}
-
-footer .streamings a:first-child {
-    margin: 0px;
-}
-
-footer .streamings img {
-    width: 35px;
+body {
+  background-color: rgba(0, 0, 0);
 }

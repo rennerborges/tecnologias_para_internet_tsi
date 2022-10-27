@@ -22,103 +22,55 @@
     </header>
     <section id="discografia" class="s-albuns">
       <div class="container">
-        <div class="album-item">
-          <a href="./html/cosmo.html">
-            <figure>
-              <img src="../assets/images/capas/cosmo.jpg" alt="Cosmo" />
-              <figcaption>Cosmo</figcaption>
-            </figure>
-          </a>
-        </div>
-
-        <div class="album-item">
-          <a href="./html/cancoes.html">
-            <figure>
-              <img
-                src="../assets/images/capas/cancoes.jpg"
-                alt="Canções de apartamento"
-              />
-              <figcaption>Canções de apartamento</figcaption>
-            </figure>
-          </a>
-        </div>
-
-        <div class="album-item">
-          <a href="./html/ciceroalbatroz.html">
-            <figure>
-              <img
-                src="../assets/images/capas/ciceroealbatroz.jpg"
-                alt="Cícero e Albatroz"
-              />
-              <figcaption>Cícero e Albatroz</figcaption>
-            </figure>
-          </a>
-        </div>
-
-        <div class="album-item">
-          <a href="./html/praia.html">
-            <figure>
-              <img src="../assets/images/capas/apraia.webp" alt="A praia" />
-              <figcaption>A Praia</figcaption>
-            </figure>
-          </a>
-        </div>
-
-        <div class="album-item">
-          <a href="./html/sabado.html">
-            <figure>
-              <img src="../assets/images/capas/sabado.jpg" alt="Sábado" />
-              <figcaption>Sábado</figcaption>
-            </figure>
-          </a>
-        </div>
+        <Disk v-for="disk in disks" :key="disk.title" :disk="disk" />
       </div>
     </section>
-    <footer>
-      <div class="container">
-        <div class="streamings">
-          <a
-            href="https://open.spotify.com/artist/6a5wUPC879Kyfw0aXxVatB"
-            target="_blank"
-          >
-            <figure>
-              <img src="../assets/images/icons/spotify.svg" alt="Spotify" />
-            </figure>
-          </a>
-
-          <a
-            href="https://music.youtube.com/channel/UCq99XmhDdwzvunMdxgVHyWQ"
-            target="_blank"
-          >
-            <figure>
-              <img
-                src="../assets/images/icons/yt-music.png"
-                alt="Youtube Music"
-              />
-            </figure>
-          </a>
-
-          <a href="https://www.deezer.com/en/artist/145731" target="_blank">
-            <figure>
-              <img src="../assets/images/icons/deezer.webp" alt="Deezer" />
-            </figure>
-          </a>
-        </div>
-        <h2>
-          &copy; 2022 &middot; Renner Borges &middot; Todos os direitos
-          reservados
-        </h2>
-      </div>
-    </footer>
+    <FooterCiceroPage />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import FooterCiceroPage from '../components/Footer.vue';
+import Disk from '../components/Disk.vue';
 
 export default defineComponent({
   name: 'HomeView',
-  components: {},
+  data: function () {
+    return {
+      disks: [
+        {
+          title: 'Cosmo',
+          image: require('@/assets/images/capas/cosmo.jpg'),
+          link: '/cosmo',
+        },
+        {
+          title: 'Canções de apartamento',
+          image: require('@/assets/images/capas/cancoes.jpg'),
+          link: '/cancoes',
+        },
+        {
+          title: 'Cícero e Albatroz',
+          image: require('@/assets/images/capas/ciceroealbatroz.jpg'),
+          link: '/ciceroalbatroz',
+        },
+        {
+          title: 'A Praia',
+          image: require('@/assets/images/capas/apraia.webp'),
+          link: '/praia',
+        },
+        {
+          title: 'Sábado',
+          image: require('@/assets/images/capas/sabado.jpg'),
+          link: '/sabado',
+        },
+      ],
+    };
+  },
+  components: {
+    FooterCiceroPage,
+    Disk,
+  },
 });
 </script>
 
