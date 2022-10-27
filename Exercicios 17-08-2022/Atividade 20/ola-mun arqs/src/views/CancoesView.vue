@@ -107,10 +107,6 @@ export default defineComponent({
 </script>
 
 <style>
-/* =========== HEADER ========== */
-
-/* =========== ESPECIFICOS ========== */
-
 /* =========== MÚSICAS ========== */
 .s-musicas {
   width: 100%;
