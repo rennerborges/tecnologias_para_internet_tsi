@@ -1,5 +1,5 @@
 <template>
-  <header :id="id">
+  <header :id="id" :style="banner">
     <div class="h-superior">
       <div class="container">
         <div class="capa-album">
@@ -28,47 +28,22 @@ export default defineComponent({
     title: { type: String, required: true },
     img: { type: String, required: true },
     id: { type: String, required: true },
+    loading: { type: Boolean, required: false },
+  },
+  data() {
+    return {
+      banner: {
+        background: `linear-gradient(rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.9)), url('${this.img}')`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+      },
+    };
   },
   components: { BackHome },
 });
 </script>
 
 <style scoped>
-#cancoes {
-  background: linear-gradient(rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.9)),
-    url('../assets/images/capas/cancoes.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-#cosmo {
-  background: linear-gradient(rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.9)),
-    url('../assets/images/capas/cosmo.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-#praia {
-  background: linear-gradient(rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.9)),
-    url('../assets/images/capas/apraia.webp');
-  background-position: center;
-  background-size: cover;
-}
-
-#ciceroealbatroz {
-  background: linear-gradient(rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.9)),
-    url('../assets/images/capas/ciceroealbatroz.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
-#sabado {
-  background: linear-gradient(rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.9)),
-    url('../assets/images/capas/sabado.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
 /* =========== HEADER ========== */
 
 header {
