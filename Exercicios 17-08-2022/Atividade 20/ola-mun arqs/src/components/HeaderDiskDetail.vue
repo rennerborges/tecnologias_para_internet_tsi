@@ -1,5 +1,8 @@
 <template>
-  <header :id="id" :style="banner">
+  <header :id="id">
+    <div :style="banner" class="banner"></div>
+    <div class="backdrop"></div>
+
     <div class="h-superior">
       <div class="container">
         <div class="capa-album">
@@ -32,7 +35,7 @@ export default defineComponent({
   data() {
     return {
       banner: {
-        background: `linear-gradient(rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.9)), url('${this.img}')`,
+        background: `url('${this.img}')`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
       },
@@ -47,13 +50,33 @@ export default defineComponent({
 
 header {
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
+.banner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(2px);
+}
+
+.backdrop {
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 4px);
+  bottom: -4px;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.7) 70%,
+    rgba(0, 0, 0, 1)
+  );
+}
 .h-superior .container,
 .h-inferior .container {
+  z-index: 2;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -68,9 +91,9 @@ header {
 }
 
 .h-inferior {
+  z-index: 2;
   width: 100%;
   height: 10%;
-  background: linear-gradient(rgba(0, 0, 0, 0.1) 35%, rgba(0, 0, 0, 0.9));
 }
 
 .h-inferior h1 {
@@ -85,6 +108,7 @@ header {
   height: 250px;
   border-radius: 50%;
   overflow: hidden;
+  box-shadow: 2px 8px 28px -1px rgb(44 42 42 / 59%);
 }
 
 .capa-album figure {

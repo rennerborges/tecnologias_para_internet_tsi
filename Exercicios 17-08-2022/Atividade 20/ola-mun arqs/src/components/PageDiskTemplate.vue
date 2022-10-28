@@ -39,6 +39,8 @@ export default defineComponent({
   },
   created() {
     // Creating loader
+    window.scrollTo(0, 0);
+
     this.loading = true;
 
     axios
