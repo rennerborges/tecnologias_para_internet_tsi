@@ -1,5 +1,7 @@
 <template>
-  <section class="s-musicas">
+  <ContainerMusicSkeleton v-if="loading" />
+
+  <section class="s-musicas" v-else>
     <div class="container">
       <ol>
         <li v-for="music in musics" :key="music.title">
@@ -16,7 +18,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 import { MusicInterface } from '../interfaces/music';
-
+import ContainerMusicSkeleton from '../components/ContainerMusicSkeleton.vue';
 export default defineComponent({
   name: 'ContainerMusic',
   props: {
@@ -24,6 +26,13 @@ export default defineComponent({
       type: Array as PropType<MusicInterface[]>,
       required: true,
     },
+    loading: {
+      type: Boolean,
+      required: false,
+    },
+  },
+  components: {
+    ContainerMusicSkeleton,
   },
 });
 </script>

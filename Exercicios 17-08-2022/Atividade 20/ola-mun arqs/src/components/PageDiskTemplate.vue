@@ -1,7 +1,7 @@
 <template>
-  <HeaderDiskDetail :id="id" :title="title" :img="img" :loading="loading" />
+  <HeaderDiskDetail :id="id" :title="title" :img="img" />
 
-  <ContainerMusic :musics="musics" />
+  <ContainerMusic :musics="musics" :loading="loading" />
 
   <FooterCiceroPage />
 </template>
