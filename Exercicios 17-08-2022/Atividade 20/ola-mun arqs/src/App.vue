@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Componente que permite transitar pelas rotas -->
     <router-view></router-view>
   </div>
 </template>

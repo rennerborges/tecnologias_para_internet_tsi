@@ -6,6 +6,11 @@ import PraiaView from '../views/PraiaView.vue';
 import SabadoView from '../views/SabadoView.vue';
 import CiceroAlbatrozView from '../views/CiceroAlbatrozView.vue';
 
+// Nessa array denominado routes e onde vou definir minhas rotas
+// Seguindo o padrão da interface RouteRecordRaw onde temos um path, name e component
+//  "path" é o caminho da página
+//  "name" nome daquela página
+//  "component" o que será renderizado
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -48,6 +53,7 @@ const routes: Array<RouteRecordRaw> = [
   },
 ];
 
+//Aqui em baixo estamos criando as rotas;
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
